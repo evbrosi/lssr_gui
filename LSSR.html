@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html>
+<head>
+	<title> LSSR TRY</title>
+
+	<!-- Here we link our bootstrap business -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap-theme.css">
+	<!-- Here we link our CSS -->
+	<link rel="stylesheet" href="lssr.css">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+</head>
+<body>
+
+
+<div class = "log_book">
+<fieldset id="buildyourform">
+    <legend>Build your own LSSR!</legend>
+
+
+
+<input type="button" value="Let's Get Started"  class="btn btn-primary active" class= "add" id="add" onclick ="this.value='Add a field' "/>
+<input type="button" value="Update form" class= "btn btn-success active" class="add" id="preview" />
+</fieldset>
+
+
+</div>
+
+
+<div id="templateGoesHere">
+    <div class="col-md-3 col-sm-6">
+        <a id="printLabel">@@printLabel@@</a>
+        <a id="printDescription">@@printDescription@@</a>
+    </div>
+</div>
+
+
+
+	<!-- This probably doesn't seem to make sense but there's a lot going on here...
+	we are providing a space for the user to autogenerate their content... -->
+
+
+
+
+
+    <!-- Official JQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <!-- Official Bootstrap -->
+    <script src="bootstrap-4.3.1-dist/js/bootstrap.js"></script>
+    <!-- Official Bootstrap -->
+    <script src="bootstrap-4.3.1-dist/js/bootstrap.js"></script>
+	<script src= "lssr.js"></script>
+
+</body>
+</html>
