@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title> LSSR TRY</title>
+
+    <!-- Here we link our bootstrap business -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap-theme.css">
+    <!-- Here we link our CSS -->
+    <link rel="stylesheet" href="big_boy_css.css">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+</head>
+    <body>
+        <div class="panel-body">
+            <div class="log_book">
+                <legend>Build your own LSSR!</legend>
+                    
+                    <div class="row">
+                        <div class="col-sm-13">
+                            <label id="label_1">
+                                <select class="field1"><option value=\"name\">Name</option><option value=\"s/n\">S/N</option><option value=\"model\">Model</option><option value=\"manu\">Manufacturer</option><option value=\"tail\">Tail</option><option value=\"hours\">Hours</option><option value=\"date\">Date</option><option value=\"company\">Company</option><option value=\"textbox\">Other</option><option value=\"checkbox\">Cert</option>menuOptions</select>
+                            </label>
+                        <input id="label_1" width="50%" type="text" class="field1" placeholder=@lssrRecord.FormCreator \>
+                        <label id="label_2">
+                            <select class=\"fieldtype\"><option value=\"company\">Company</option><option value=\"name\">Name</option><option value=\"s/n\">S/N</option><option value=\"model\">Model</option><option value=\"manu\">Manufacturer</option><option value=\"tail\">Tail</option><option value=\"hours\">Hours</option><option value=\"date\">Date</option><option value=\"textbox\">Other</option><option value=\"checkbox\">Cert</option>menuOptions</select>
+                        </label>
+                            <input type="textbox" class="field2" style="width:250px" placeholder=@lssrRecord.Company id1=\"field2 \>
+                        </div>    
+                    </div>
+
+                            <div class="row">
+                                <div class="row_2">
+                                    <label id="label_3">
+                                        <select class=\"fieldtype\"><option value=\"manu\">Manufacturer</option><option value=\"tail\">Tail</option><option value=\"hours\">Hours</option><option value=\"model\">Model</option><option value=\"s/n\">S/N</option><option value=\"date\">Date</option><option value=\"name\">Name</option><option value=\"company\">Company</option><option value=\"textbox\">Other</option><option value=\"checkbox\">Cert</option>menuOptions</select>
+                                    </label>
+                                    <input type="textbox" class="field1" style="width:150px" placeholder=@lssrRecord.Manufacturer id1=\"field1 \>
+                                    <label>
+                                        <select class=\"fieldtype\"><option value=\"model\">Model</option><option value=\"manu\">Manufacturer</option><option value=\"tail\">Tail</option><option value=\"hours\">Hours</option><option value=\"s/n\">S/N</option><option value=\"date\">Date</option><option value=\"name\">Name</option><option value=\"company\">Company</option><option value=\"textbox\">Other</option><option value=\"checkbox\">Cert</option>menuOptions</select>
+                                    </label>
+                                    <input type="textbox" class="field1" style="width:150px" placeholder=@lssrRecord.Model id1=\"field1 \>
+                                    <label>
+                                        <select class=\"fieldtype\"><option value=\"cert\">Certification</option><option value=\"textbox\">Other</option><option value=\"company\">Company</option><option value=\"name\">Name</option><option value=\"s/n\">S/N</option><option value=\"model\">Model</option><option value=\"manu\">Manufacturer</option><option value=\"tail\">Tail</option><option value=\"hours\">Hours</option><option value=\"date\">Date</option>menuOptions</select>
+                                    </label>
+                                    <input type="textbox" class="field1" style="width:150px" placeholder=@lssrRecord.CertificateNumber \>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="row_3">
+                                    <label>
+                                        <select class=\"fieldtype\"><option value=\"s/n\">S/N</option><option value=\"model\">Model</option><option value=\"manu\">Manufacturer</option><option value=\"tail\">Tail</option><option value=\"hours\">Hours</option><option value=\"date\">Date</option><option value=\"name\">Name</option><option value=\"company\">Company</option><option value=\"textbox\">Other</option><option value=\"checkbox\">Cert</option>menuOptions</select>
+                                    </label>
+                                    <input type="textbox" class="field1" style="width:110px" placeholder="serial number" id1=\"field1 \>
+                                    <label>
+                                        <select class="fieldtype"><option value=\"tail\">Tail</option><option value=\"hours\">Hours</option><option value=\"manu\">Manufacturer</option><option value=\"model\">Model</option><option value=\"s/n\">S/N</option><option value=\"date\">Date</option><option value=\"name\">Name</option><option value=\"company\">Company</option><option value=\"textbox\">Other</option><option value=\"checkbox\">Cert</option>menuOptions</select>
+                                    </label>
+                                    <input type="textbox" class="field1" style="width:100px" placeholder="tail" id1=\"field1 \>
+
+                                    <select class="fieldtype"><option value=\"date\">Date</option><option value=\"hours\">Hours</option><option value=\"tail\">Tail</option><option value=\"manu\">Manufacturer</option><option value=\"model\">Model</option><option value=\"s/n\">S/N</option><option value=\"name\">Name</option><option value=\"company\">Company</option><option value=\"textbox\">Other</option><option value=\"checkbox\">Cert</option>menuOptions</select>
+                                    <!-- I will eventually write something that will base all this business on values.-->
+                                    <input type="textbox" class="field1" style="width:75px" placeholder=@lssrRecord.FormDate id1=\"field1 \>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="row_4">
+                                    <label>
+                                        <select class=\"fieldtype\"><option value=\"hours\">Hours</option><option value=\"tail\">Tail</option><option value=\"manu\">Manufacturer</option><option value=\"model\">Model</option><option value=\"s/n\">S/N</option><option value=\"date\">Date</option><option value=\"name\">Name</option><option value=\"company\">Company</option><option value=\"textbox\">Other</option><option value=\"checkbox\">Cert</option>menuOptions</select>
+                                    </label>
+                                    <input type="textbox" class="field1" style="width:560px" placeholder=@lssrRecord.Hours id1=\"field1 \>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="row_5">
+                                    <input type="textbox" class="field1" style="width:600px" placeholder="input data here" id1=\"field1 \>
+                                </div>
+                            </div>
+
+                            <div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-body">
+      <div class="row">
+          <div class="row" id="target">
+              <div class="input-group">
+                <input class="form-control">
+                <span class="input-group-btn">
+                    <button class="btn btn-lg btn-link removeBtn" id="removeBtn">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
+                </span>
+              </div>
+            </div>
+          </div>
+              <button class="btn btn-link btn-sm" id="add"><span class="glyphicon glyphicon-plus"></span> Add Field</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        
+
+
+
+                        </div>
+
+                </div>
+            </div>
+
+        </label>
+    </div>
+</div>
+
+</fieldset>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- This probably doesn't seem to make sense but there's a lot going on here...
+    we are providing a space for the user to autogenerate their content... -->
+
+
+
+
+
+    <!-- Official JQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <!-- Official Bootstrap -->
+    <script src="bootstrap-4.3.1-dist/js/bootstrap.js"></script>
+    <!-- Official Bootstrap -->
+    <script src="bootstrap-4.3.1-dist/js/bootstrap.js"></script>
+    <script src="lssr2.js"></script>
+
+</body>
+</html>            

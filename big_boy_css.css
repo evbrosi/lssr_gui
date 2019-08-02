@@ -1,0 +1,80 @@
+/* Moving things down a bit */
+
+.log_book
+{
+	margin-top: 55px;
+	margin-left: 25px;
+	padding: 30px;
+	border: 4px;
+	border-style: solid;
+	width: 750px;
+}
+
+.row
+{
+	padding: 10px;
+}
+
+.removeBtn
+{
+	background-color: red;
+}
+/* Adding some color to the remove button */
+
+span.glyphicon-remove {
+  color: #AA9900;
+  background-color: black;
+}
+
+/* Make first remove button grey */
+
+div.col-sm-2:first-child span.glyphicon-remove {
+  color: #ff80ee;
+  background-color: black;
+}
+
+/* Spacing things out a bit */
+
+span.glyphicon-plus {
+  padding-right: 3px;
+}
+
+#add
+{
+	float: right;
+}
+
+
+/* Removing the default underline */
+
+.btn-link:hover {
+  text-decoration: none;
+}
+
+
+
+/* This is what the form comes up with... */
+
+
+
+fieldset
+{
+    border: solid 1px #000;
+    padding:10px;
+    display:block;
+    clear:both;
+    margin:5px 0px;
+}
+
+legend
+{
+    padding:0px 10px;
+    background: #cc8000;
+    color:#FFF;
+}
+
+input.add
+{
+    float:right;
+
+}
