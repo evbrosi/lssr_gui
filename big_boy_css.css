@@ -13,35 +13,40 @@
 .row
 {
 	padding: 10px;
+  width: 600px;
 }
 
 .removeBtn
 {
 	background-color: red;
+  width: 30px;
+  padding: 3px;
 }
 /* Adding some color to the remove button */
 
 span.glyphicon-remove {
-  color: #AA9900;
-  background-color: black;
+  color: white;
 }
 
-/* Make first remove button grey */
 
+/* Here's the stuff for the added field... */
 div.col-sm-2:first-child span.glyphicon-remove {
-  color: #ff80ee;
+  color: white;
   background-color: black;
+  width: 650px;
 }
 
 /* Spacing things out a bit */
 
 span.glyphicon-plus {
-  padding-right: 3px;
+  padding-right: 19px;
 }
 
+/* this is just the little guy that says- "Add field" */
 #add
 {
 	float: right;
+  font-size: 20px;
 }
 
 

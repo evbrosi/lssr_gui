@@ -3,10 +3,11 @@
 	padding: 20px;
 	margin: 10px;
 	width: 675px;
-	border-radius: 30px;
 	margin:15px;
 	font-size: 15px;
 	color: white;
+  border: solid 1px #000;
+
 }
 
 /* This is what the form comes up with... */
@@ -20,6 +21,13 @@ body
 
 }
 
+
+#formArea
+{
+  float:right;
+  height:45px;
+}
+
 .text
 {
     width: 600px;
@@ -31,7 +39,7 @@ body
     width: 400px;
 }
 
-fieldset
+.yourLSSR
 {
     border: solid 1px #000;
     padding:10px;
@@ -39,6 +47,7 @@ fieldset
     clear:both;
     margin:5px 0px;
 }
+
 legend
 {
     padding:0px 10px;

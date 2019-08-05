@@ -52,6 +52,11 @@ $("#preview").click(function(){
     buildIt();
 }); 
 
+var n = function() {
+  return $("div.col-xs-2").length;
+  $("body").append(fieldSet);
+};
+
 //This big boy creates the form.
 var buildIt= function(){
         //this deletes the previous form... So that you aren't just generating a bunch of forms...
@@ -59,24 +64,27 @@ var buildIt= function(){
         $("#yourform").remove();
 
 
-           $(this).parent($("buildyourform div").length).remove;
+        $(this).parent($("buildyourform").length).remove;
 
         //This prints the fun little title section.
         var fieldSet = $("<fieldset id=\"yourform\"><legend>Your LSSR! </legend></fieldset>");
         
+
+        var printableObjects =[];
         //So here's what actually builds the thing.
         $("#buildyourform div").each(function() {
 
             //we replace field with ID so we can identify things based on where they're at everything would fall apart without it.
             var id = "input" + $(this).attr("id").replace("field","");
+
             
-            // I declare the label variable incase I missed something below.
+            // I declare the label variable- don't need to but maybe I missed something below.
             var label = $("<label for=\"" + id + "\">" + $(this).find("input.fieldname").first().val() + "</label>"); 
 
             // Basically this is where I say, Okay, this is the Name and this is the data placed next to each.
             switch ($(this).find("select.fieldtype").first().val()) {
                 case "date":
-                    label= $("<label for=\"" + id + "\">" + "Date:   " + $(this).find("input.fieldname").first().val() + "</label>");
+                    label= $("<label for=\"" + id + "\" >" + "Date:   " + $(this).find("input.fieldname").first().val() + "</label>");
                     break;
                 case "hours":
                     label= $("<label for=\"" + id + "\">" + "Hours:   " + $(this).find("input.fieldname").first().val() + "</label>");
@@ -99,38 +107,30 @@ var buildIt= function(){
                 case "company":
                     label= $("<label for=\"" + id + "\">" + "Company:   " + $(this).find("input.fieldname").first().val() + "</label>");
                     break;
-                case "signature":
-                    label= $("<label for=\"" + id + "\">" +  "<br/>   Signature: __________________________________________________________________ " + "</label>")
-                    break;
                 }
 
-            (fieldSet.append(label));
-            //we don't actually want to see this field. It's unimportant. Well, I had a text field basically but naww.
-            var input;
-            //input = $("<input type=\"text\" id=\"" + id + "\" name=\"" + id + "\" />"); 
-            switch ($(this).find("select.fieldtype").first().val()) {
-                //So if it's a 'date' it'll do the date stuff.
-                case "hours":
-                    input; //= $("<input type=\"text\" id=\"" + id + "\" name=\"" + id + "\">" + $(this).find("input.fieldname").first().val() + "</text>");
-                    break;                
-                case "checkbox":
-                    input = $("<input type=\"checkbox\" id=\"" + id + "\" name=\"" + id + "\" />");
-                    break;
 
+                //this saves each instance.
+            fieldSet.append(label);
+            
+            printableObjects.push(id);
 
-                    var template=$("#template").html();
-
-                    template = template.replace("@@printLabel@@", label);
-                    template = template.replace("@@printDescription@@", input);
-
-                    $("#templateGoesHere").append(template);
-
-
-
-            }
-            fieldSet.append(input);
+                //return "<a>" + label + "</a>";
         });
-        ($("body").append(fieldSet));
+
+        //($(document.body.appendChild('<div col-xs-3>' fieldSet '</div>'));
+    //return $("div.col-xs-2").length;
+    //this prints out all the instances...
+
+    for (var i=0; i<printableObjects.length; i++) {
+    $("form").append("<tr><td>Number " + i + " is:</td>");
+    $("form").append("<td>" + printableObjects[i] + "</td></tr>");
+    }
+
+
+
+    $("form").append(fieldSet);
+
     };
 
 
@@ -180,9 +180,6 @@ var firstTime = function() {
             break;
             case 8:
                 var fType = $("<select class=\"fieldtype\"><option value=\"textarea\">Other</option><option value=\"company\">Company</option><option value=\"name\">Name</option><option value=\"s/n\">S/N</option><option value=\"model\">Model</option><option value=\"manu\">Manufacturer</option><option value=\"tail\">Tail</option><option value=\"hours\">Hours</option><option value=\"date\">Date</option><option value=\"checkbox\">Cert</option>menuOptions</select>");
-            break;
-            case 9:
-                var fType = $("<select class=\"fieldtype\"><option value=\"checkbox\">Certification</option><option value=\"textbox\">Other</option><option value=\"company\">Company</option><option value=\"name\">Name</option><option value=\"s/n\">S/N</option><option value=\"model\">Model</option><option value=\"manu\">Manufacturer</option><option value=\"tail\">Tail</option><option value=\"hours\">Hours</option><option value=\"date\">Date</option>menuOptions</select>");
                 var fName = $("<input type=\"text\" class=\"fieldname hours\" placeholder=\"Write your own certification statement here.\" id1=\"fieldname\" />");
             break;
         }
@@ -207,57 +204,13 @@ var firstTime = function() {
         $("#buildyourform").append(fieldWrapper);
 
         }
-        signatureSetUp();
         buildIt();
     firstClick = false;
 }
 
 // This sets it all up as a thing. 
-var signatureSetUp = function(){
 
-        var intId = $("#buildyourform div").length;
-    
-        var fieldWrapper = $("<div class=\"fieldwrapper\" id=\"field" + intId + "\"/>");
+var printLabel = function(printingLabels){
 
-
-        var fType = $("<select class=\"fieldtype\"><option value=\"signature\">Signature</option></select>");
-        
-        var fName = $("<input type=\"text\" class=\"fieldname\" placeholder=\"This is always last.\" id1=\"fieldname\" readonly/>");
-
-        var removeButton = $("<input type=\"button\" class=\"remove\" value=\"-\" />");
-        removeButton.click(function() {
-            $(this).parent().remove();
-        });
-
-        //and this creates all the big stuff!
-        fieldWrapper.append(fType);
-        fieldWrapper.append(fName);
-        fieldWrapper.append(removeButton);
-        $("#buildyourform").append(fieldWrapper);
 
 }
-
-var deleteSignature = function(){
-
- 
-
-}
-
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-
