@@ -11,11 +11,11 @@ $(document).ready(function() {
 
         var intId = $("#buildyourform div").length;
 
-        $("buildyourform div").remove(intId);
+        //$("buildyourform div").remove(intId);
         $("buildyourform div").remove(intId);
 
         //This pushes everything down. So we don't have values on top of each other. pretty clever.
-        var intId = $("#buildyourform div").length;
+        //var intId = $("#buildyourform div").length;
         //This makes it so that the values can be identified.
         var fieldWrapper = $("<div class=\"fieldwrapper\" id=\"field" + intId + "\"/>");
 
@@ -54,7 +54,7 @@ $("#preview").click(function(){
 
 var n = function() {
   return $("div.col-xs-2").length;
-  $("body").append(fieldSet);
+    //$("body").append(fieldSet);
 };
 
 //This big boy creates the form.
@@ -62,15 +62,16 @@ var buildIt= function(){
         //this deletes the previous form... So that you aren't just generating a bunch of forms...
         // maybe I want this though
         $("#yourform").remove();
+         $("#baby").empty();
 
 
         $(this).parent($("buildyourform").length).remove;
 
-        //This prints the fun little title section.
-        var fieldSet = $("<fieldset id=\"yourform\"><legend>Your LSSR! </legend></fieldset>");
+        //This prints the fun little title section. I reuse this variable so that this won't keep printing.
+        var fieldSet = $("<fieldset class='col-xs-3'></fieldset>");
         
-
-        var printableObjects =[];
+        //originally my idea was to throw all the stuff into an array but it's just not workkkkkking.
+        var printableObjects =[""];
         //So here's what actually builds the thing.
         $("#buildyourform div").each(function() {
 
@@ -84,10 +85,10 @@ var buildIt= function(){
             // Basically this is where I say, Okay, this is the Name and this is the data placed next to each.
             switch ($(this).find("select.fieldtype").first().val()) {
                 case "date":
-                    label= $("<label for=\"" + id + "\" >" + "Date:   " + $(this).find("input.fieldname").first().val() + "</label>");
+                    label= $("<label for=\"" + id + "\" >" + "Date:   " + $(this).find("input.fieldname").first().val() +"</label>");
                     break;
                 case "hours":
-                    label= $("<label for=\"" + id + "\">" + "Hours:   " + $(this).find("input.fieldname").first().val() + "</label>");
+                    label= $("<label for=\"" + id + "\">" + "Hours:   " + $(this).find("input.fieldname").first().val() +"</label>");
                     break;
                 case "tail":
                     label= $("<label for=\"" + id + "\">" + "Tail:   " + $(this).find("input.fieldname").first().val() + "</label>");
@@ -110,26 +111,28 @@ var buildIt= function(){
                 }
 
 
+
+
                 //this saves each instance.
             fieldSet.append(label);
+
+            printableObjects.push(fieldSet);
+
             
-            printableObjects.push(id);
+            //$("form").append(fieldSet);
+              //$("#baby").append(fieldSet);
+              //document.getElementById('baby').append(fieldSet);
 
                 //return "<a>" + label + "</a>";
+
+            $("#baby").append(fieldSet);
+
+
         });
 
         //($(document.body.appendChild('<div col-xs-3>' fieldSet '</div>'));
     //return $("div.col-xs-2").length;
     //this prints out all the instances...
-
-    for (var i=0; i<printableObjects.length; i++) {
-    $("form").append("<tr><td>Number " + i + " is:</td>");
-    $("form").append("<td>" + printableObjects[i] + "</td></tr>");
-    }
-
-
-
-    $("form").append(fieldSet);
 
     };
 
@@ -210,7 +213,3 @@ var firstTime = function() {
 
 // This sets it all up as a thing. 
 
-var printLabel = function(printingLabels){
-
-
-}

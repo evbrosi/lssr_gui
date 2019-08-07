@@ -10,6 +10,18 @@
 
 }
 
+.yourform {
+  padding: 5px;
+}
+
+label {
+  padding: 10px;
+}
+
+.commentsField {
+  float: left;
+}
+
 /* This is what the form comes up with... */
 body
 {
@@ -18,7 +30,15 @@ body
     width: 675px;
     margin: 10px;
     border-radius: 30px;
+    float: left;
+}
 
+.fieldwrapper {
+  float: left;
+}
+
+button {
+  float: right;
 }
 
 

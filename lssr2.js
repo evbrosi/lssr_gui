@@ -1,45 +1,30 @@
-var target = $("div#target");
+$( "select" ).change(function () {
 
-var n = function() {
-  return $("div.col-xs-2").length;
-};
+    $( "select option:selected" ).each(function() {
+      
+    
+      switch ($(this).text()) {
+        case "Name":
+              field = $('<input type="textbox" class="field1" style="width:80px" value=@lssrRecord.CertificateNumber \>');
+        break;
+        case "Chocolate":
+        str = $("<label for=\"" + id + "\" >" + "Date:   " + $(this).find("input.fieldname").first().val() + "</label>");
+            break;
+            case "Caramel":
+              str = $( this ).text();
+              field = $('<input type="textbox" class="field1" style="width:80px" value=@lssrRecord.CertificateNumber \>');
+            break;
 
-var newInput = function() {
-  var div = $("<div/>", {
-    "class": "input-group"
-  });
-  var input = $("<input>", {
-    "class": "form-control"
-  });
-  var span = $("<span/>", {
-    "class": "input-group-btn"
-  });
-  var button = $("<button/>", {
-    "class": "removeBtn btn btn-sm btn-link",
-    type: "button",
-    id: n()
-  });
-  var glyph = $("<span/>", {
-    "class": "glyphicon glyphicon-remove"
-  });
-  var col = $("<div/>", {
-    "class": "form-group col-xs-2",
-    id: "newInput-" + n()
-  });
+      };
+      
 
-  $(glyph).appendTo(button);
-  $(button).appendTo(span);
-  $(input).appendTo(div);
-  $(span).appendTo(div);
-  $(div).appendTo(col);
-  return col;
-};
+  //    field = $('<input type="textbox" class="field1" style="width:75px" placeholder=@lssrRecord.FormDate id1=\"field1 \>');
+    });
+    
+ //       $( "print" ).append(field); 
+    //$( "print" ).text( str );
+    $( "print").append(field);
 
-$('button#add').on('click', function() {
-  $(newInput()).appendTo(target);
-});
 
-$('#target').on('click', 'button', function() {
-  var target = $("#target").find("#newInput-" + this.id);
-  $(target).remove();
-});
+  })
+  .change();
